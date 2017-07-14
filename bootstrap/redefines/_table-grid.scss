@@ -1,0 +1,32 @@
+@mixin make-table-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %table-column {
+    position: relative
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .t-col#{$infix}-#{$i} {
+        @extend %table-column;
+      }
+    }
+
+    .t-col#{$infix} {
+      @extend %table-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @for $i from 1 through $columns {
+        .t-col#{$infix}-#{$i} {
+          width: percentage($i / $columns);
+        }
+      }
+    }
+      
+  }
+}
+
+@include make-table-grid-columns();

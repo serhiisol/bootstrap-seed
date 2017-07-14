@@ -1,0 +1,9 @@
+{
+  "name": "bootstrap-seed",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "4.7.0"
+  }
+}

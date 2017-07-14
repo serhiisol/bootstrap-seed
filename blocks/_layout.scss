@@ -1,0 +1,16 @@
+.root-container {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+section {
+  display: block;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px 0 $gray-lightish;
+  background: $white;
+  padding: 1rem;
+}

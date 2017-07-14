@@ -1,0 +1,15 @@
+.table {
+  thead th {
+    border-top: 0 none;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: $table-border-width solid $table-border-color;
+  }
+
+  &-600 {
+    @include media-breakpoint-down(sm) {
+      min-width: 600px;
+    }
+  }
+}
